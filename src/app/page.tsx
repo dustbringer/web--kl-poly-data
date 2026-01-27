@@ -15,7 +15,7 @@ import Container from "@/components/Container";
 import Link from "@/components/Link";
 import Accordion from "@/components/Accordion";
 
-// import descriptions from "./descriptions";
+import descriptions from "./descriptions";
 
 export default function Home() {
   return (
