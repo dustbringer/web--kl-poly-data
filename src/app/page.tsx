@@ -95,6 +95,56 @@ export default function Home() {
           </li>
         </ul>
       </Typography>
+
+      <hr style={{ width: "300px", margin: "2em auto" }} />
+
+      <Accordion title="Polynomial Details">
+        <Typography variant="body1">
+          Short descriptions of the polynomials and their abbreviations used in
+          some plots.
+        </Typography>
+        <TableContainer
+          sx={{
+            margin: "1em auto",
+            border: "1px solid lightgrey",
+            borderRadius: "5px",
+            width: "fit-content",
+          }}
+        >
+          <Table size="small" sx={{ width: "auto" }}>
+            <TableHead>
+              <TableRow
+                sx={{
+                  backgroundColor: "#f0f0f0",
+                }}
+              >
+                <TableCell sx={{ fontWeight: "600", borderBottomWidth: "3px" }}>
+                  Name
+                </TableCell>
+                <TableCell sx={{ fontWeight: "600", borderBottomWidth: "3px" }}>
+                  Abbreivation
+                </TableCell>
+                <TableCell sx={{ fontWeight: "600", borderBottomWidth: "3px" }}>
+                  Description
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {Object.keys(descriptions).map((col, i) => (
+                <TableRow key={`abbrTable-row${i}`}>
+                  <TableCell key={`abbrTable-row${i},col${0}`}>{col}</TableCell>
+                  <TableCell key={`abbrTable-row${i},col${1}`}>
+                    {descriptions[col].abbr}
+                  </TableCell>
+                  <TableCell key={`abbrTable-row${i},col${2}`}>
+                    {descriptions[col].description || "-"}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Accordion>
     </Container>
   );
 }
