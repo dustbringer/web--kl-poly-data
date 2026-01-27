@@ -683,8 +683,8 @@ export default function BallmapperPage() {
             (with 3rd root coefficient scaling).
           </li>
           <li>
-            When there are no duplicates ("nodupe"), comparisons involving it
-            will make no sense.
+            When there are no duplicates (&quot;nodupe&quot;), comparisons
+            involving it will make no sense.
           </li>
         </ul>
         <Typography variant="body1">
