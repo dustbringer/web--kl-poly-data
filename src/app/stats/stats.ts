@@ -33,6 +33,66 @@ const stats: {
     };
   };
 } = Object.freeze({
+  unique: {
+    ylabel: "Percentage of unique values (%)",
+    xlabel: "Type A",
+    ylogscale: false,
+    legend: {
+      yanchor: "top",
+      y: 0.99,
+      xanchor: "left",
+      x: 0.01,
+    },
+    columns: ["KL", "H"],
+    abbreviate: false,
+    columnsAbbr: ["KL", "H"],
+    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    ys: [
+      [50, 12.5, 6.25, 3.2894, 1.4908, 0.9133, 0.6597, 0.5609, 0.5736, 0.667],
+      [
+        100, 50, 28.125, 13.81578947368421, 6.651376146788991,
+        3.349120433017591, 1.9899636615331373, 1.3468194528637634,
+        1.1569098088318914, 1.1501315262855094,
+      ],
+    ],
+    showSuccessiveQuotients: true,
+    successiveQuotientsLegend: {
+      yanchor: "top",
+      y: 1.1,
+      xanchor: "right",
+      x: 0.99,
+    },
+  },
+  uniqueLog: {
+    ylabel: "Percentage of unique values (%)(log scale)",
+    xlabel: "Type A",
+    ylogscale: true,
+    legend: {
+      yanchor: "top",
+      y: 0.99,
+      xanchor: "left",
+      x: 0.01,
+    },
+    columns: ["KL", "H"],
+    abbreviate: false,
+    columnsAbbr: ["KL", "H"],
+    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    ys: [
+      [50, 12.5, 6.25, 3.2894, 1.4908, 0.9133, 0.6597, 0.5609, 0.5736, 0.667],
+      [
+        100, 50, 28.125, 13.81578947368421, 6.651376146788991,
+        3.349120433017591, 1.9899636615331373, 1.3468194528637634,
+        1.1569098088318914, 1.1501315262855094,
+      ],
+    ],
+    showSuccessiveQuotients: true,
+    successiveQuotientsLegend: {
+      yanchor: "top",
+      y: 1.1,
+      xanchor: "right",
+      x: 0.99,
+    },
+  },
   maxMaxAbs: {
     ylabel: "Maximum coeffcient (log scale)",
     xlabel: "Type A",
