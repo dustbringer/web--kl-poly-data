@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Open Sans", "Roboto", "Helvetica", "Arial", "sans-serif";
+  margin: 0;
+}
+
+#root {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+#bokeh-plot-unique {
+  height: 600px;
+}
+#bokeh-plot-bm {
+  height: 5255px;
+}
+
+#bokeh-plot-bm-14 {
+  height: 1700px;
+}
+
+.lasso path {
+  stroke: rgb(80, 80, 80);
+  stroke-width: 2px;
+}
+
+.lasso .drawn {
+  fill-opacity: 0.05;
+}
+
+.lasso .loop_close {
+  fill: none;
+  stroke-dasharray: 4, 4;
+}
+
+.lasso .origin {
+  fill: #3399ff;
+  fill-opacity: 0.5;
+}
+
+.not_possible {
+  fill: rgb(200, 200, 200);
+}
+
+.possible {
+  fill: #ec888c;
+}
+
+.selected {
+  fill: steelblue;
+}
