@@ -80,6 +80,13 @@ export default function Home() {
           </Link>
         </li>
       </Typography>
+      <Typography variant="body1" sx={{ marginBottom: ".5em" }}>
+        The analogous webpage for polynomial knot invariants can be found{" "}
+        <Link href="https://dustbringer.github.io/web--knot-invariant-comparison">
+          here
+        </Link>
+        .
+      </Typography>
 
       <Typography variant="h5" gutterBottom>
         References and acknowledgements
