@@ -16,6 +16,28 @@ import Link from "@/components/Link";
 import Accordion from "@/components/Accordion";
 
 import descriptions from "./descriptions";
+import websiteMap, { type Link as LinkT } from "@/data/websiteMap";
+
+function generateLinks(ls: LinkT[]) {
+  return (
+    <>
+      {ls.map((l, i) => (
+        <li key={`li-${i}`}>
+          {l.path !== undefined ? (
+            <Link href={l.path} inPlace={l.path.startsWith("/")}>
+              {l.name}
+            </Link>
+          ) : (
+            l.name
+          )}
+          {l.sub !== undefined && l.sub.length > 0 && (
+            <ul>{generateLinks(l.sub)}</ul>
+          )}
+        </li>
+      ))}
+    </>
+  );
+}
 
 export default function Home() {
   return (
@@ -37,48 +59,15 @@ export default function Home() {
       </Typography>
       <Typography variant="body1" sx={{ marginBottom: ".5em" }}>
         <strong>Warning!</strong> The <Link href="/bm">Ballmapper</Link> page
-        and old versions of the website fetch large files (~30-50MB per figure).
-        So beware if you have bandwidth limits or slow internet.
+        fetches large files (~30-50MB per figure). So beware if you have
+        bandwidth limits or slow internet.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
         Website Map
       </Typography>
       <Typography variant="body1" component={"ul"} sx={{ margin: "0 0 1em" }}>
-        <li>
-          <Link href="/stats" inPlace>
-            Stats
-          </Link>
-          <ul>
-            {/* <li>
-              <Link href="/stats/dist" inPlace>
-                Distribution
-              </Link>
-            </li> */}
-            {/* <li>
-              <Link href="/stats/modp" inPlace>
-                Mod p
-              </Link>
-            </li> */}
-          </ul>
-        </li>
-
-        <li>
-          <Link href="/roots" inPlace>
-            Roots
-          </Link>{" "}
-          (coming soon)
-        </li>
-        <li>
-          <Link href="/bm" inPlace>
-            Ballmapper
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" inPlace>
-            About
-          </Link>
-        </li>
+        {generateLinks(websiteMap)}
       </Typography>
       <Typography variant="body1" sx={{ marginBottom: ".5em" }}>
         The analogous webpage for polynomial knot invariants can be found{" "}

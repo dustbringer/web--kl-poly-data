@@ -9,8 +9,9 @@ const navLinks: Link[] = [
   { name: "Stats", path: "/stats" },
   // { name: "mod-p", path: "/stats/modp" },
   { name: "Roots", path: "/roots" },
-  { name: "Ballmapper", path: "/bm" },
+  { name: "Ballmapper", path: "/tda/ballmapper" },
   { name: "About", path: "/about" },
+  { name: "Knots", path: "https://dustbringer.github.io/web--knot-invariant-comparison" },
 ];
 
 export default navLinks;
