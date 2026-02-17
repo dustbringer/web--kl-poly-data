@@ -35,7 +35,7 @@ function zeros2(x: number, y: number) {
 
 const options = [
   { name: "KL", value: "kl" },
-  // { name: "H", value: "h" },
+  { name: "H", value: "h" },
 ];
 
 export default function RootsPage() {
