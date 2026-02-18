@@ -23,7 +23,7 @@ const websiteMap: Link[] = [
         path: "/tda/ballmapper",
       },
       // { name: "k-Nearest neighbours", path: "/tda/k-nearest-neighbours" },
-      // { name: "Persistent Homology", path: "/tda/persistent-homology" },
+      { name: "Persistent Homology", path: "/tda/persistent-homology" },
     ],
   },
   { name: "About", path: "/about" },
