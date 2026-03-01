@@ -539,8 +539,8 @@ export default function BallmapperPage() {
     ) {
       // Fill types if it is empty
       savedKnotTypes.current = (
-        await fetch(staticify(`/static/ballmapper/types-3-16.out`)).then((res) =>
-          res.text(),
+        await fetch(staticify(`/static/ballmapper/types-3-16.out`)).then(
+          (res) => res.text(),
         )
       )
         .trim()
@@ -579,8 +579,8 @@ export default function BallmapperPage() {
     if (savedVals.current === null || savedVals.current[name] === undefined) {
       // Fill types if it is empty
       savedVals.current[name] = (
-        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then((res) =>
-          res.text(),
+        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then(
+          (res) => res.text(),
         )
       )
         .trim()
@@ -613,8 +613,8 @@ export default function BallmapperPage() {
     if (savedVals.current === null || savedVals.current[name] === undefined) {
       // Fill types if it is empty
       savedVals.current[name] = (
-        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then((res) =>
-          res.text(),
+        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then(
+          (res) => res.text(),
         )
       )
         .trim()
