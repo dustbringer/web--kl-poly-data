@@ -7,17 +7,30 @@ export const optionsType: { [name: string]: string } = {
 };
 
 export const optionsBool: { [name: string]: string } = {
-  ["chiralpseudo-jones+b1"]: "chiral",
+  ["eulerian"]: "eulerian",
+  ["semieulerian"]: "semieulerian",
+  ["regular"]: "regular",
+  ["planar"]: "planar",
+  ["at_free"]: "at_free",
+  ["chordal"]: "chordal",
+  ["distance_regular"]: "distance_regular",
+  ["strongly_regular"]: "strongly_regular",
+  ["perfect_graph"]: "perfect_graph",
+  ["biconnected"]: "biconnected",
+  ["tree"]: "tree",
+  ["threshold_graph"]: "threshold_graph",
+  ["bipartite"]: "bipartite",
+  ["hamiltonian-pseudo"]: "hamiltonian",
 };
 
 export const optionsVal: { [name: string]: string } = {
-  ["hypvol"]: "hypvol",
-  ["det"]: "det",
-  ["det-primedivisors"]: "det-primedivisors",
-  ["sig"]: "sig",
-  ["sig-mod4"]: "sig-mod4",
-  ["3genus"]: "3genus",
-  ["arf"]: "Arf",
-  ["s-inv"]: "s-inv",
-  ["s-inv-abs"]: "s-inv-abs",
+  ["nVertices"]: "nVertices",
+  ["nEdges"]: "nEdges",
+  ["radius"]: "radius",
+  ["diameter"]: "diameter",
+  ["girth"]: "girth",
+  ["NEWgirth"]: "NEWgirth",
+  ["harmonicDiameter"]: "harmonicDiameter",
+  ["effectiveGraphResistance"]: "effectiveGraphResistance",
+  ["kemeny"]: "kemeny-constant",
 };

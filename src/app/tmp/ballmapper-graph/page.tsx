@@ -532,33 +532,6 @@ export default function BallmapperPage() {
     }
   };
 
-  const highlightBoolsType = async () => {
-    if (
-      savedKnotTypes.current === null ||
-      savedKnotTypes.current.length === 0
-    ) {
-      // Fill types if it is empty
-      savedKnotTypes.current = (
-        await fetch(staticify(`/static/ballmapper/types-3-16.out`)).then(
-          (res) => res.text(),
-        )
-      )
-        .trim()
-        .split("\n");
-    }
-
-    const checked = ["a", "n", "t", "s", "h"].filter(
-      (c) => checkedHighlight[c],
-    );
-    const output: Array<number> = [];
-    savedKnotTypes.current.forEach((t, i) => {
-      if (checked.every((c) => t.includes(c))) {
-        output.push(i);
-      }
-    });
-    highlightBools(output, checked.map((s) => optionsType[s]).join(" AND "));
-  };
-
   const highlightBoolsSpecific = async () => {
     const idxs = knotsText
       .split(",")
@@ -579,9 +552,9 @@ export default function BallmapperPage() {
     if (savedVals.current === null || savedVals.current[name] === undefined) {
       // Fill types if it is empty
       savedVals.current[name] = (
-        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then(
-          (res) => res.text(),
-        )
+        await fetch(
+          staticify(`/static/tmp/ballmapper-graph/bool-${name}-2-9.out`),
+        ).then((res) => res.text())
       )
         .trim()
         .split("\n")
@@ -613,9 +586,9 @@ export default function BallmapperPage() {
     if (savedVals.current === null || savedVals.current[name] === undefined) {
       // Fill types if it is empty
       savedVals.current[name] = (
-        await fetch(staticify(`/static/ballmapper/${name}-3-16.out`)).then(
-          (res) => res.text(),
-        )
+        await fetch(
+          staticify(`/static/tmp/ballmapper-graph/col-${name}-2-9.out`),
+        ).then((res) => res.text())
       )
         .trim()
         .split("\n")
@@ -805,7 +778,6 @@ export default function BallmapperPage() {
             </Box>
           </Box>
         </Accordion>
-        {/*
         <Accordion title="Colours">
           <Typography variant="body1">Boolean invariants</Typography>
           <Box
@@ -832,57 +804,8 @@ export default function BallmapperPage() {
               </Button>
             ))}
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Checkboxes
-              options={[
-                {
-                  name: "alternating",
-                  value: "a",
-                },
-                {
-                  name: "non-alternating",
-                  value: "n",
-                },
-                {
-                  name: "torus",
-                  value: "t",
-                },
-                {
-                  name: "satellite",
-                  value: "s",
-                },
-                {
-                  name: "hyperbolic",
-                  value: "h",
-                },
-              ]}
-              checked={checkedHighlight}
-              onChange={(name, e) =>
-                setCheckedHighlight(
-                  (obj) =>
-                    ({
-                      ...obj,
-                      [name]: (e.target as HTMLInputElement).checked,
-                    }) as { [name: string]: boolean },
-                )
-              }
-            />
-            <Button
-              variant="contained"
-              size="small"
-              onClick={highlightBoolsType}
-              disableElevation
-            >
-              Intersect
-            </Button>
-          </Box>
-          <Box
+
+          {/* <Box
             sx={{
               display: "flex",
               alignItems: "center",
@@ -890,7 +813,7 @@ export default function BallmapperPage() {
             }}
           >
             <TextField
-              label="Specific Knots"
+              label="Specific Graphs"
               variant="outlined"
               size="small"
               value={knotsText}
@@ -912,16 +835,7 @@ export default function BallmapperPage() {
             >
               Highlight
             </Button>
-          </Box>
-
-          <ul>
-            <li>
-              <strong>Warning!</strong> &quot;Chiral&quot; here means the
-              pseudo-chirality according to non-palindromicity of B1 and Jones
-              invariants, so there may be some false negatives (chiral knots
-              shown as achiral).
-            </li>
-          </ul>
+          </Box> */}
 
           <HorizontalRule />
 
@@ -952,6 +866,7 @@ export default function BallmapperPage() {
           </Box>
         </Accordion>
 
+        {/*
         <Accordion title="Epsilon movie">
           Jones:{" "}
           <Link href={`/static/ballmapper/movie/jones-grow.gif`} inPlace>
