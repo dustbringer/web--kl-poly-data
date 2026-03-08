@@ -35,7 +35,7 @@ const stats: {
 } = Object.freeze({
   unique: {
     ylabel: "Percentage of unique values (%)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: false,
     yrange: [0, 100 + 5],
     legend: {
@@ -44,21 +44,14 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
     ys: [
       [
-        // char
-        100, 100, 100, 100, 99.29577464788733, 96.68341708542714,
-        93.99768824306473, 90.57695686550119, 88.60262709112766,
-      ],
-      [
-        // chrom
-      ],
-      [
-        // tutte
+        80, 69.56521739130434, 68.70748299319727, 80.84896347482724,
+        90.67747539085119, 95.24792622170575,
       ],
     ],
     showSuccessiveQuotients: true,
@@ -71,7 +64,7 @@ const stats: {
   },
   maxMaxAbs: {
     ylabel: "Maximum coeffcient (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -79,11 +72,11 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-    ys: [[1, 3, 8, 20, 45, 105, 224, 504, 1296], [], []],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
+    ys: [[7, 31, 490, 6540, 184184, 5715816]],
     showSuccessiveQuotients: true,
     successiveQuotientsLegend: {
       yanchor: "top",
@@ -94,7 +87,7 @@ const stats: {
   },
   avgMaxAbs: {
     ylabel: "Average maximum coeffcient (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -102,18 +95,15 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
     ys: [
       [
-        1, 2, 3.6666666666666665, 6.033333333333333, 9.598591549295774,
-        17.26030150753769, 34.76238441215324, 70.83885692113971,
-        151.2555684378415,
+        5.6, 19.391304347826086, 208.2108843537415, 1739.5844027640671,
+        28538.08176027794, 379561.00384467986,
       ],
-      [],
-      [],
     ],
     showSuccessiveQuotients: true,
     successiveQuotientsLegend: {
@@ -125,7 +115,7 @@ const stats: {
   },
   maxSumAbs: {
     ylabel: "Maximum coeffcient sum (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -133,16 +123,16 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-    ys: [[2, 6, 18, 50, 130, 322, 770, 1794, 4314], [], []],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
+    ys: [[9, 64, 800, 14762, 354312, 14070330]],
     showSuccessiveQuotients: true,
   },
   avgSumAbs: {
     ylabel: "Average coeffcient sum (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -150,23 +140,20 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
     ys: [
       [
-        2, 3.6666666666666665, 6.777777777777778, 13, 25.091549295774648,
-        50.39899497487437, 106.20566380449141, 233.00251471492578,
-        529.029027095865,
+        7.6, 39.56521739130435, 347.9251700680272, 3944.678183613031,
+        55699.24423856398, 938835.6227021548,
       ],
-      [],
-      [],
     ],
   },
   maxAvgAbs: {
     ylabel: "Maximum average coefficient (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -174,22 +161,15 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-    ys: [
-      [
-        0.6666666666666666, 1.5, 3.6, 8.333333333333334, 18.571428571428573,
-        40.25, 85.55555555555556, 179.4, 392.1818181818182,
-      ],
-      [],
-      [],
-    ],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
+    ys: [[3, 16, 160, 2460.3333333333335, 50616, 1758791.25]],
   },
   avgAvgAbs: {
     ylabel: "Average average coefficient (log scale)",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: true,
     legend: {
       yanchor: "top",
@@ -197,23 +177,20 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
     ys: [
       [
-        0.6666666666666666, 1.0555555555555556, 1.6518518518518517,
-        2.6027777777777774, 4.165459423205901, 7.071765972720747,
-        12.791321377461168, 24.632536332956047, 49.790622341258526,
+        2.533333333333333, 10.028985507246377, 69.91609977324264,
+        659.1773609740037, 7968.256128160594, 117461.82596848435,
       ],
-      [],
-      [],
     ],
   },
   maxSpread: {
     ylabel: "Maximum spread",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: false,
     legend: {
       yanchor: "top",
@@ -221,15 +198,15 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-    ys: [[3, 4, 5, 6, 7, 8, 9, 10, 11], [], []],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
+    ys: [[3, 4, 5, 6, 7, 8]],
   },
   avgSpread: {
     ylabel: "Average spread",
-    xlabel: "Number of verticies (up to)",
+    xlabel: "Dimension (up to)",
     ylogscale: false,
     legend: {
       yanchor: "top",
@@ -237,18 +214,15 @@ const stats: {
       xanchor: "left",
       x: 0.01,
     },
-    columns: ["characteristic", "chromatic", "tutte"],
+    columns: ["h-poly"],
     abbreviate: false,
-    columnsAbbr: ["char", "chrom", "tutte"],
-    x: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    columnsAbbr: ["h"],
+    x: [2, 3, 4, 5, 6, 7],
     ys: [
       [
-        3, 3.3333333333333335, 3.888888888888889, 4.733333333333333,
-        5.809859154929577, 6.94070351758794, 8.160832232496697,
-        9.343011508389704, 10.541072830213574,
+        3, 3.782608695652174, 4.809523809523809, 5.827245804540968,
+        6.862420382165605, 7.878564982507324,
       ],
-      [],
-      [],
     ],
   },
 });

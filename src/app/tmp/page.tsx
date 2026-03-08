@@ -41,6 +41,7 @@ const websiteMapTmp: LinkT = {
       name: "Stats (S_n simples)",
       path: "/tmp/stats-sn-simples",
     },
+    { name: "Stats (h-poly)", path: "/tmp/stats-h-poly" },
     { name: "Ballmapper (Graph)", path: "/tmp/ballmapper-graph" },
     {
       name: "Ballmapper (Graph) (larger graphs)",
