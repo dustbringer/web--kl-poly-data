@@ -65,11 +65,12 @@ const colorRainbow = (n: number) =>
   d3.scaleSequential(d3.interpolateTurbo)(lerp(0.15, 0.9, n));
 
 const optionsBM: { [name: string]: string } = {
-  ["h-poly-2-7-e=0.1-3rt"]: "h-poly-2-7-e=0.1-3rt",
-  ["h-poly-2-7-e=0.1-5rt"]: "h-poly-2-7-e=0.1-5rt",
-  ["h-poly-2-7-e=0.3-5rt"]: "h-poly-2-7-e=0.3-5rt",
-  ["h-poly-2-7-e=0.4-5rt"]: "h-poly-2-7-e=0.4-5rt",
-  ["h-poly-2-7-e=0.5-5rt"]: "h-poly-2-7-e=0.5-5rt",
+  ["h-poly-2-8-e=0.01"]: "h-poly-2-8-e=0.01",
+  ["h-poly-2-8-e=0.1"]: "h-poly-2-8-e=0.1",
+  ["h-poly-2-8-e=0.05"]: "h-poly-2-8-e=0.05",
+  // ["h-poly-2-9-e=0.01"]: "h-poly-2-9-e=0.01",
+  // ["h-poly-2-9-e=0.1"]: "h-poly-2-9-e=0.1",
+  // ["h-poly-2-9-e=0.05"]: "h-poly-2-9-e=0.05",
 };
 
 export default function BallmapperPage() {
@@ -81,7 +82,7 @@ export default function BallmapperPage() {
   }>({});
   const savedKnotTypes = React.useRef<Array<string>>([]);
 
-  const [bmInv, setBmInv] = React.useState<string>("h-poly-2-7-e=0.1-3rt");
+  const [bmInv, setBmInv] = React.useState<string>("h-poly-2-8-e=0.01");
   const [bmLinks, setBmLinks] = React.useState<Array<LinkDatum>>([]);
   const [bmNodes, setBmNodes] = React.useState<Array<NodeDatum>>([]);
   const [bmPCBL, setBmPCBL] = React.useState<Array<Array<number>>>([]);
@@ -93,7 +94,7 @@ export default function BallmapperPage() {
   const [selected, setSelected] = React.useState<{ [n: number]: boolean }>({});
 
   const [bmCmpInv, setBmCmpInv] = React.useState<string>(
-    "h-poly-2-7-e=0.1-5rt",
+    "h-poly-2-8-e=0.1",
   );
   const [bmCmpLinks, setBmCmpLinks] = React.useState<Array<LinkDatum>>([]);
   const [bmCmpNodes, setBmCmpNodes] = React.useState<Array<NodeDatum>>([]);
