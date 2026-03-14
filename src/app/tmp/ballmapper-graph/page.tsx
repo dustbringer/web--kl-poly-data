@@ -67,6 +67,9 @@ const colorRainbow = (n: number) =>
 const optionsBM: { [name: string]: string } = {
   ["chPoly-2-9-e=0.3"]: "chPoly-2-9-e=0.3",
   ["chPoly-2-9-e=0.5"]: "chPoly-2-9-e=0.5",
+  ["tutte-2-9-e=0.3-3rt"]: "tutte-2-9-e=0.3-3rt",
+  ["tutte-2-9-e=0.2-3rt"]: "tutte-2-9-e=0.2-3rt",
+  ["tutte-2-9-e=0.1-3rt"]: "tutte-2-9-e=0.1-3rt",
 };
 
 export default function BallmapperPage() {
